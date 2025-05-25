@@ -12,9 +12,6 @@
 - 🧠 **Gamified Learning**  
   Designed especially for younger audiences, RoadWise turns essential road rules into engaging activities, bridging the gap between knowledge and action.
 
-- 🗣️ **Community-Driven Reports**  
-  Users can share road safety issues, report hazards, and contribute to building safer commuting experiences.
-
 - 📚 **Educational Resources**  
   Curated content, tips, and modules on pedestrian safety, traffic signs, bike rules, and more—updated regularly to stay relevant.
 
@@ -25,9 +22,16 @@
 Traditional road safety education can be dry and passive. **RoadWise** reimagines this approach by introducing:
 
 - Real-time decision-making challenges
-- Virtual simulations that show cause and effect
+- Virtual simulations 
 - Visually rich and sound-guided storytelling
-- A platform where learning meets awareness
+
+
+## 🎯 Future Plans
+
+- Demo upgradation (virtual)
+- chat bot to clear doubts instantly
+- Tactics for driving (to improve your skills)
+- Future plans coming soon...🙌
 
 ---
 
