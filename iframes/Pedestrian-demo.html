@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🚦 Road Safety Interactive Tour</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      background: linear-gradient(to top, #e2e8f0, #f1f5f9);
+      min-height: 60vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+      z-index: -1;
+      opacity: 0.5;
+      filter: blur(5px);
+      loop: true;
+      autoplay: true;
+    }
+
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .demo-container {
+      max-width: 500px;
+      width: 100%;
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.5s ease;
+      animation: fadeIn 1s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .tooltip {
+      font-size: 18px;
+      background: #fef3c7;
+      color: #78350f;
+      border: 1px solid #92400e;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      animation: popUp 0.5s ease-in-out;
+    }
+
+    @keyframes popUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2563eb;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+      transform: scale(1.05);
+    }
+
+    #badge {
+      display: none;
+      font-size: 24px;
+      color: green;
+      margin-top: 30px;
+      animation: bounce 1s ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop id="myVideo">
+    <source src="/iframes/video/walking.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <h1>🚦 Road Safety Interactive Demo</h1>
+  <p>Click Start and interact with each safety step!<br>
+  Plug your headphones to feel it..🎧🎶</p>
+
+  <div class="demo-container" id="demoBox">
+    <!-- Added Video -->
+    <video width="100%" controls>
+      <source src="/iframes/video/Pedestrians-Tips.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Added Audio -->
+    <audio id="stepAudio" src="/iframes/audio/street-ambience-with-walking-people.wav"></audio>
+
+    <div class="tooltip" id="tooltipText">
+      Click Start to begin your road safety journey.
+    </div>
+    <button id="controlButton">Start Demo</button>
+  </div>
+
+  <div id="badge">🏆 Demo Completed! You're Road Ready!</div>
+
+<script>
+const steps = [
+  "🚗 Always be aware of your Surroundings.",
+  "🚥 Look for Cars while crossing the road and also prefer to use zebra crossing. ",
+  " 🐾Use footpaths always and dont use mobile📵.",
+  "🚦Look at pedestrians Traffic Lights: Red = Stop 🚷 Green = Go 🚶",
+  "🏆 Great job! You've completed the safety steps."
+];
+
+let currentStep = -1;
+const tooltip = document.getElementById('tooltipText');
+const button = document.getElementById('controlButton');
+const badge = document.getElementById('badge');
+const audio = document.getElementById('stepAudio'); // Audio reference
+
+button.addEventListener('click', () => {
+  currentStep++;
+
+  if (currentStep < steps.length - 1) {
+    tooltip.innerHTML = steps[currentStep];
+    button.innerText = "Next";
+    audio.currentTime = 0; // Restart audio from beginning
+    audio.play(); // Play audio for each step
+  } else if (currentStep === steps.length - 1) {
+    tooltip.innerHTML = steps[currentStep];
+    button.innerText = "Finish";
+    audio.currentTime = 0;
+    audio.play();
+  } else {
+    document.getElementById('demoBox').style.display = 'none';
+    badge.style.display = 'block';
+    audio.pause(); // Stop audio
+    audio.currentTime = 0; // Reset audio
+    setTimeout(() => {
+      currentStep = -1;
+      tooltip.innerHTML = steps[0];
+      button.innerText = "Start Demo";
+      document.getElementById('demoBox').style.display = 'block';
+      badge.style.display = 'none';
+    }, 4000);
+  }
+});
+</script>
+
+</body>
+</html>

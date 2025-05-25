@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Shuffling Effect in Pure CSS (my take)</title>
+  <link rel="stylesheet" href="./Rules-Regulations.css">
+
+</head>
+<body>
+<div class="cards">
+
+  <input type="radio" id="radio-1" name="radio-card" checked>
+  <article class="card" style="--angle:4deg">
+    <img class="card-img" src="https://cdn.shopify.com/s/files/1/0007/0028/5046/files/traffic-light-g8db1e866b_640_480x480.png?v=1659517477">
+   <div class="card-data">
+      <span class="card-num">1/7</span>
+      <h2>Traffic Light Meaning:</h3>
+      <p><b>Red: Stop</b> - Come to a complete stop and do not proceed until the light turns green.</p>
+          <p><b>Yellow: Slow</b> - Prepare to go. The light is about to turn green.</p>
+          <p><b>Green: Go</b> - Proceed with caution. The road is clear, but be aware of pedestrians and other vehicles.</p>
+      <footer>
+        <label for="radio-7" aria-label="Previous">&#10094;</label>
+        <label for="radio-2" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>
+
+  <!-- card 2 -->
+  <input type="radio" id="radio-2" name="radio-card">
+  <article class="card" style="--angle:-8deg">
+    <img class="card-img" src="https://static.vecteezy.com/system/resources/previews/033/517/887/non_2x/no-left-turn-sign-do-not-turn-left-traffic-sign-illustration-vector.jpg">
+    <div class="card-data">
+      <span class="card-num">2/7</span>
+      <h2>No Left Turn</h3>
+      <p>Prohibits drivers from making a left turn at the intersection. Ensures safe and smooth traffic flow.</p>
+      <footer>
+        <label for="radio-1" aria-label="Previous">&#10094;</label>
+        <label for="radio-3" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>
+
+  <!-- card 3 -->
+    <input type="radio" id="radio-3" name="radio-card">
+  <article class="card" style="--angle:-7deg">
+    <img class="card-img" src="https://t4.ftcdn.net/jpg/11/23/04/33/360_F_1123043302_U2XtlL2Vihz6d7PS1aCo0Lu5tZ0G4NmC.jpg">
+    <div class="card-data">
+      <span class="card-num">3/7</span>
+      <h2>Hump ahead</h3>
+      <p>This sign warns drivers of a speed bump or hump on the road ahead. It signals the need to slow down to avoid damage to the vehicle and ensure safety.</p>
+      <footer>
+        <label for="radio-2" aria-label="Previous">&#10094;</label>
+        <label for="radio-4" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>
+
+  <!-- card 4 -->
+    <input type="radio" id="radio-4" name="radio-card">
+  <article class="card" style="--angle:11deg">
+    <img class="card-img" src="https://st3.depositphotos.com/7458252/15970/i/450/depositphotos_159702242-stock-photo-road-sign-used-in-uruguay.jpg">
+    <div class="card-data">
+      <span class="card-num">4/7</span>
+      <h2>No Right Turn</h3>
+      <p>This sign indicates that turning right at the intersection is prohibited. It helps manage traffic flow and prevent accidents in areas where right turns could be dangerous.</p>
+      <footer>
+        <label for="radio-3" aria-label="Previous">&#10094;</label>
+        <label for="radio-5" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>
+
+  <!-- card 5 -->
+    <input type="radio" id="radio-5" name="radio-card" >
+  <article class="card" style="--angle:13deg">
+    <img class="card-img" src="https://4.imimg.com/data4/PW/VM/MY-24696381/no-overtaking-sign-250x250.jpg">
+    <div class="card-data">
+      <span class="card-num">5/7</span>
+      <h2>No Overtaking</h3>
+      <p>Prohibits overtaking in the area for safety due to curves, hills, or other hazards.</p>
+      <footer>
+        <label for="radio-4" aria-label="Previous">&#10094;</label>
+        <label for="radio-6" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>
+
+  <!-- card 6 -->
+    <input type="radio" id="radio-6" name="radio-card">
+  <article class="card" style="--angle:-17deg">
+    <img class="card-img" src="https://t3.ftcdn.net/jpg/05/17/86/56/360_F_517865692_HD8UrgJbB3dY7lX6xie8Hgx7HPhkgZ1f.jpg" >
+    <div class="card-data">
+      <span class="card-num">6/7</span>
+      <h2>No Parking</h3>
+      <p>Indicates that parking is prohibited in the designated area to ensure smooth traffic flow and safety.</p>
+      <footer>
+        <label for="radio-5" aria-label="Previous">&#10094;</label>
+        <label for="radio-7" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>
+
+  <!-- card 7 -->
+  <input type="radio" id="radio-7" name="radio-card" >
+  <article class="card" style="--angle:20deg">
+    <img class="card-img"src="https://cpimg.tistatic.com/09288834/b/4/Speed-Limit-Sign.jpg">
+    <div class="card-data">
+      <span class="card-num">7/7</span>
+      <h2>Speed Limit</h3>
+      <p>Indicates the maximum speed allowed on this road segment. Helps maintain safe driving speeds.</p>
+      <footer>
+        <label for="radio-6" aria-label="Previous">&#10094;</label>
+        <label for="radio-1" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>
+  </dvi>
+  <script  src="./script.js"></script>
+
+</body>
+</html>
